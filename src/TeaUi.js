@@ -10,7 +10,7 @@ import { useNavigate } from 'react-router-dom';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBack';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-function StuUi() {
+function TeaUi() {
     const [detail, setDetail] = useState([]);
     const getDetail = () => {
         fetch("https://63a3d79c471b38b206173b15.mockapi.io/users",
@@ -28,7 +28,7 @@ function StuUi() {
             
         <h1> <Tooltip title="Go Back" arrow><Button variant="contained" color="success" onClick={() => navigate(-1)}>
                 <ArrowBackIosIcon />
-            </Button></Tooltip>👨🏻‍🎓List of Students👨🏻‍🎓👩🏻</h1>
+            </Button></Tooltip>👨‍🏫List of Teachers👩‍🏫</h1>
 
 
             <div class="col-md-12" style={{ justifyItems: 'center' }}>
@@ -46,9 +46,9 @@ function StuUi() {
                                     <ListGroup.Item>Contact Number : {object.ContactNumber}</ListGroup.Item>
                                 </ListGroup>
                                 <Card.Body>
-                                    <Tooltip title="Information" arrow><Button variant="primary"><InfoIcon onClick={() => navigate(`/studentdetail/${object.idno}`)} /></Button></Tooltip>&nbsp;&nbsp;
+                                    <Tooltip title="Information" arrow><Button variant="primary"><InfoIcon onClick={() => navigate(`/teacherdetail/${object.idno}`)} /></Button></Tooltip>&nbsp;&nbsp;
 
-                                    <Tooltip title="Edit" arrow><Button variant="success"><EditIcon onClick={() => navigate(`/editstudent/${object.idno}`)} /></Button></Tooltip>&nbsp;&nbsp;
+                                    <Tooltip title="Edit" arrow><Button variant="success"><EditIcon onClick={() => navigate(`/editteacher/${object.idno}`)} /></Button></Tooltip>&nbsp;&nbsp;
 
                                     <Tooltip title="delete" arrow><Button variant="danger" onClick={() => {
                                         fetch(`https://63a3d79c471b38b206173b15.mockapi.io/users/${object.idno}`, { method: "DELETE" })
@@ -65,7 +65,7 @@ function StuUi() {
         </div>
     );
 }
-export default StuUi;
+export default TeaUi;
 
 
 

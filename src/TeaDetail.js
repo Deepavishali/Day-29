@@ -21,7 +21,7 @@ export default function StuDetail() {
 
     return (
         <div>
-            <h1 style={{ marginLeft: '100px', marginTop: '10px', color: "green", fontWeight: 'bolder', fontFamily: 'cursive' }}>Detailed page of a Student 👩🏻‍🎓✨</h1>
+            <h1 style={{ marginLeft: '100px', marginTop: '10px', color: "green", fontWeight: 'bolder', fontFamily: 'cursive' }}>Detailed page of a Teacher👩‍🏫 🤞✨</h1>
             <Card
                 direction={{ base: 'column', sm: 'row' }}
                 overflow='hidden'

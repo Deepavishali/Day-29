@@ -3,10 +3,10 @@ import { useNavigate, useParams } from "react-router";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
-import { Spinner } from '@chakra-ui/react';
 
 
-export default function EditStu() {
+
+export default function EditTea() {
     const { userid } = useParams();
     const [user, setUser] = useState(null);
     useEffect(() => {
@@ -18,7 +18,7 @@ export default function EditStu() {
                 setUser(usdata);
             });
     }, []);
-    return user ? <EditUserForm user={user}/> :   <Spinner style={{height:"50px",width:"50px"}} />
+    return user ? <EditUserForm user={user}/> : "Please wait........!!!"
 
 }
 
@@ -108,7 +108,7 @@ function EditUserForm({user}) {
                             headers: { "Content-Type": "application/json" },
                         })
                             .then((data)=>data.json())
-                            .then(()=>navigate("/students"));
+                            .then(()=>navigate("/teachers"));
                     }
                 }
             >

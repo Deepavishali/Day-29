@@ -26,7 +26,9 @@ import StuUi from './StuUi.js';
 import Home from './Home.js';
 import StuDetail from './StuDetail.js';
 import EditStu from './EditStu.js';
-
+import TeaUi from './TeaUi.js';
+import TeaDetail from './TeaDetail.js';
+import EditTea from './EditTea.js';
 
 
 const drawerWidth = 240;
@@ -164,7 +166,7 @@ export default function Ui() {
                                             justifyContent: 'center',
                                         }}
                                     >
-                                        {index % 2 === 0 ? <PeopleRoundedIcon style={{ color: "black" }} onClick={() => navigate('/students')} /> : <SchoolRoundedIcon style={{ color: "black" }} />}
+                                        {index % 2 === 0 ? <PeopleRoundedIcon style={{ color: "black" }} onClick={() => navigate('/students')} /> : <SchoolRoundedIcon style={{ color: "black" }} onClick={()=>navigate('/teachers')}/>}
                                     </ListItemIcon >
                                     <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} />
                                 </ListItemButton>
@@ -178,9 +180,12 @@ export default function Ui() {
                     <Typography paragraph >
 
                         <Routes>
+                            <Route path='/teachers' element={<TeaUi />} />
                             <Route path='/students' element={<StuUi />} />
                             <Route path='/studentdetail/:userid' element={<StuDetail />} />
+                            <Route path='/teacherdetail/:userid' element={<TeaDetail />} />
                             <Route path='/editstudent/:userid' element={<EditStu />} />
+                            <Route path='/editteacher/:userid' element={<EditTea />} />
                             <Route path='/' element={<Home />} />
                         </Routes>
                     </Typography>
