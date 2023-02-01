@@ -3,6 +3,7 @@ import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
 import { useFormik } from "formik";
 import * as yup from "yup";
+import "yup-phone";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 
 
@@ -14,7 +15,7 @@ const userValidationSchema = yup.object({
         .min(2, "Please enter valid name✌")
         .required("Name is mandatory 🤷‍♀️😁"),
     Age: yup.number()
-        .min(0, "Please Enter valid Age✌")
+        .min(0, "Please Enter valid Age✌").max(100)
         .required("Age is mandatory 🤷‍♀️😁"),
     Email: yup.string()
         .min(10, "Please enter valid email✌")
@@ -22,12 +23,11 @@ const userValidationSchema = yup.object({
     Address: yup.string()
         .min(5, "Please Enter your Address✌")
         .required("Address is mandatory 🤷‍♀️😁"),
-    ContactNumber: yup.number()
-       .min(10, "Number should be atleast 10 digits✌")
-        .required("Number is mandatory 🤷‍♀️😁"),
+    ContactNumber: yup.string().phone("IN").required('Number is mandatory')
+    
 });
 
-export default function AddTea({ detail, setDetail }) {
+export default function AddStu({ detail, setDetail }) {
     const formik = useFormik({
         initialValues: {
             avatar: "",
@@ -58,7 +58,7 @@ export default function AddTea({ detail, setDetail }) {
     };
     return (
         <form onSubmit={formik.handleSubmit} style={{ marginLeft: '100px', marginTop: '50px' }} className="add-user-form">
-            <h1 style={{ color: "green", fontWeight: 'bolder', fontFamily: 'cursive' }}>Fill the below details to add Teacher 👨‍🏫✨</h1><br />
+            <h1 style={{ color: "green", fontWeight: 'bolder', fontFamily: 'cursive' }}>Fill the below details to add Teachers👩🏻👩‍🏫✨</h1><br />
             <TextField
                 id="avatar"
                 name="avatar"

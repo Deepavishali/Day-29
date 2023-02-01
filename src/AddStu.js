@@ -3,6 +3,7 @@ import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
 import { useFormik } from "formik";
 import * as yup from "yup";
+import "yup-phone";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 
 
@@ -14,7 +15,7 @@ const userValidationSchema = yup.object({
         .min(2, "Please enter valid name✌")
         .required("Name is mandatory 🤷‍♀️😁"),
     Age: yup.number()
-        .min(0, "Please Enter valid Age✌")
+        .min(0, "Please Enter valid Age✌").max(100)
         .required("Age is mandatory 🤷‍♀️😁"),
     Email: yup.string()
         .min(10, "Please enter valid email✌")
@@ -22,9 +23,8 @@ const userValidationSchema = yup.object({
     Address: yup.string()
         .min(5, "Please Enter your Address✌")
         .required("Address is mandatory 🤷‍♀️😁"),
-    ContactNumber: yup.number()
-        .min(10, "Number should be 10 digits✌")
-        .required("Number is mandatory 🤷‍♀️😁"),
+    ContactNumber: yup.string().phone("IN").required('Number is mandatory')
+    
 });
 
 export default function AddStu({ detail, setDetail }) {
