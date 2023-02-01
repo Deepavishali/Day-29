@@ -4,18 +4,18 @@ import { Card, Image, Stack, Button, Text, Heading, CardBody, CardFooter } from 
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 
 
-export default function StuDetail() {
+export default function TeaDetail() {
     const { userid } = useParams();
     const navigate = useNavigate();
-    const [user, setUser] = useState({});
+    const [teacher, setteacher] = useState({});
 
     useEffect(() => {
-        fetch(`https://63a3d79c471b38b206173b15.mockapi.io/users/${userid}`, {
+        fetch(`https://63da371319fffcd620c36c33.mockapi.io/teachers/${userid}`, {
             method: "GET",
         })
             .then((data) => data.json())
             .then((us) => {
-                setUser(us);
+                setteacher(us);
             });
     }, []);
 
@@ -31,20 +31,20 @@ export default function StuDetail() {
                 <Image
                     objectFit='cover'
                     maxW={{ base: '100%', sm: '200px' }}
-                    src={user.avatar}
+                    src={teacher.avatar}
                     alt='Caffe Latte'
                     style={{ width: '500px' }}
                 />
 
                 <Stack>
                     <CardBody style={{ marginLeft: '30px' }}>
-                        <Heading size='md'>Id no   :    {user.idno}</Heading><br/>
+                        <Heading size='md'>Id no   :    {teacher.id}</Heading><br/>
                         <Text py='2'>
-                            <Heading size='md'>Name           : {user.Name}</Heading><br/>
-                            <Heading size='md'>Age            : {user.Age}</Heading><br/>
-                            <Heading size='md'>Email          : {user.Email}</Heading><br/>
-                            <Heading size='md'>Address        : {user.Address}</Heading><br/>
-                            <Heading size='md'>Contact Number : {user.ContactNumber}</Heading><br/>
+                            <Heading size='md'>Name           : {teacher.Name}</Heading><br/>
+                            <Heading size='md'>Age            : {teacher.Age}</Heading><br/>
+                            <Heading size='md'>Email          : {teacher.Email}</Heading><br/>
+                            <Heading size='md'>Address        : {teacher.Address}</Heading><br/>
+                            <Heading size='md'>Contact Number : {teacher.ContactNumber}</Heading><br/>
                         </Text>
                     </CardBody>
 

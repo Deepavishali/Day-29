@@ -13,7 +13,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 function TeaUi() {
     const [detail, setDetail] = useState([]);
     const getDetail = () => {
-        fetch("https://63a3d79c471b38b206173b15.mockapi.io/users",
+        fetch("https://63da371319fffcd620c36c33.mockapi.io/teachers",
             { method: "GET" })
             .then((data) => data.json())
             .then((res) => setDetail(res));
@@ -38,7 +38,7 @@ function TeaUi() {
                             <Card key={index} style={{ width: '18rem', display: 'inline-flex', marginLeft: '50px', marginTop: '50px' }}>
                                 <Card.Img variant="top" src={object.avatar} />
                                 <ListGroup className="list-group-flush">
-                                    <ListGroup.Item>Id No : {object.idno}</ListGroup.Item>
+                                    <ListGroup.Item>Id No : {object.id}</ListGroup.Item>
                                     <ListGroup.Item>Name : {object.Name}</ListGroup.Item>
                                     <ListGroup.Item>Age : {object.Age}</ListGroup.Item>
                                     <ListGroup.Item>Email : {object.Email}</ListGroup.Item>
@@ -46,12 +46,12 @@ function TeaUi() {
                                     <ListGroup.Item>Contact Number : {object.ContactNumber}</ListGroup.Item>
                                 </ListGroup>
                                 <Card.Body>
-                                    <Tooltip title="Information" arrow><Button variant="primary"><InfoIcon onClick={() => navigate(`/teacherdetail/${object.idno}`)} /></Button></Tooltip>&nbsp;&nbsp;
+                                    <Tooltip title="Information" arrow><Button variant="primary"><InfoIcon onClick={() => navigate(`/teacherdetail/${object.id}`)} /></Button></Tooltip>&nbsp;&nbsp;
 
-                                    <Tooltip title="Edit" arrow><Button variant="success"><EditIcon onClick={() => navigate(`/editteacher/${object.idno}`)} /></Button></Tooltip>&nbsp;&nbsp;
+                                    <Tooltip title="Edit" arrow><Button variant="success"><EditIcon onClick={() => navigate(`/editteacher/${object.id}`)} /></Button></Tooltip>&nbsp;&nbsp;
 
                                     <Tooltip title="delete" arrow><Button variant="danger" onClick={() => {
-                                        fetch(`https://63a3d79c471b38b206173b15.mockapi.io/users/${object.idno}`, { method: "DELETE" })
+                                        fetch(`https://63da371319fffcd620c36c33.mockapi.io/teachers/${object.id}`, { method: "DELETE" })
                                             .then(() => getDetail());
                                     }}
                                     >

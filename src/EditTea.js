@@ -10,7 +10,7 @@ export default function EditTea() {
     const { userid } = useParams();
     const [user, setUser] = useState(null);
     useEffect(() => {
-        fetch(`https://63a3d79c471b38b206173b15.mockapi.io/users/${userid}`, {
+        fetch(`https://63da371319fffcd620c36c33.mockapi.io/teachers/${userid}`, {
             method: "GET",
         })
             .then((data) => data.json())
@@ -102,7 +102,7 @@ function EditUserForm({user}) {
                             Address: Address,
                             ContactNumber: ContactNumber,
                         };
-                        fetch(`https://63a3d79c471b38b206173b15.mockapi.io/users/${user.idno}`, {
+                        fetch(`https://63da371319fffcd620c36c33.mockapi.io/teachers/${user.id}`, {
                             method: "PUT",
                             body: JSON.stringify(updatedUser),
                             headers: { "Content-Type": "application/json" },
