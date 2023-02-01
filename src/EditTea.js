@@ -34,7 +34,7 @@ function EditUserForm({user}) {
 
     return (
        <div className="add-user-form" style={{marginLeft:'50px',marginTop:'50px'}}>
-         <h1 style={{color:"green",fontWeight:'bolder',fontFamily:'cursive'}}>Edit and Save Student 👨🏻‍🎓✨</h1><br/>
+         <h1 style={{color:"green",fontWeight:'bolder',fontFamily:'cursive'}}>Edit and Save Teacher 👨‍🏫✨</h1><br/>
             <TextField
                 label="image"
                 variant="outlined"
