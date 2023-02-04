@@ -21,7 +21,7 @@ function TeaUi() {
 
     const navigate = useNavigate();
 
-    useEffect(() => getDetail(), [])
+    useEffect(() => getDetail())
     return (
         <div className='row' >
 
@@ -66,6 +66,5 @@ function TeaUi() {
     );
 }
 export default TeaUi;
-
 
 

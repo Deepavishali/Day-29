@@ -10,23 +10,24 @@ import { useNavigate } from 'react-router-dom';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBack';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+
 function StuUi() {
     const [detail, setDetail] = useState([]);
+
     const getDetail = () => {
         fetch("https://63a3d79c471b38b206173b15.mockapi.io/users",
-            { method: "GET" })
-            .then((data) => data.json())
-            .then((res) => setDetail(res));
+        { method: "GET" })
+        .then((data) => data.json())
+        .then((res) => setDetail(res));
     }
-
     const navigate = useNavigate();
 
     useEffect(() => getDetail(), [])
     return (
         <div className='row' >
 
-            
-        <h1> <Tooltip title="Go Back" arrow><Button variant="contained" color="success" onClick={() => navigate(-1)}>
+
+            <h1> <Tooltip title="Go Back" arrow><Button variant="contained" color="success" onClick={() => navigate(-1)}>
                 <ArrowBackIosIcon />
             </Button></Tooltip>👨🏻‍🎓List of Students👨🏻‍🎓👩🏻</h1>
 
@@ -52,11 +53,11 @@ function StuUi() {
 
                                     <Tooltip title="delete" arrow><Button variant="danger" onClick={() => {
                                         fetch(`https://63a3d79c471b38b206173b15.mockapi.io/users/${object.idno}`, { method: "DELETE" })
-                                            .then(() => getDetail());
-                                    }}
+                                        .then(() => getDetail());
+                                             }}
                                     >
-                                        <DeleteIcon /></Button></Tooltip>&nbsp;&nbsp;
-                                </Card.Body>
+                                         <DeleteIcon /></Button></Tooltip>&nbsp;&nbsp;
+                                        </Card.Body>
                             </Card>
                         </row>
                     </container>

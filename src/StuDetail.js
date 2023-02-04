@@ -17,7 +17,7 @@ export default function StuDetail() {
             .then((us) => {
                 setUser(us);
             });
-    }, []);
+    });
 
     return (
         <div>

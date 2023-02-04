@@ -17,7 +17,7 @@ export default function TeaDetail() {
             .then((us) => {
                 setteacher(us);
             });
-    }, []);
+    });
 
     return (
         <div>

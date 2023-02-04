@@ -17,7 +17,7 @@ export default function EditTea() {
             .then((usdata) => {
                 setUser(usdata);
             });
-    }, []);
+    });
     return user ? <EditUserForm user={user}/> : "Please wait........!!!"
 
 }
